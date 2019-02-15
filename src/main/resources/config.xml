@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean id="grocery" class="Grocery">
+        <constructor-arg value="Banana"></constructor-arg>
+        <constructor-arg value="10"></constructor-arg>
+        <constructor-arg value="0.99"></constructor-arg>
+    </bean>
+    <bean id="groceryDescription" class="GroceryDescription">
+        <property name="name" value="Canned Tomato"></property>
+        <property name="description" value="Canned plum tomatoes in their own juice."></property>
+        <property name="daysSinceProduced" value="1000"></property>
+        <property name="daysToExpire" value="1"></property>
+        <property name="inStock" value="2"></property>
+        <property name="price" value="12.5"></property>
+    </bean>
+    <bean id="groceryList" class="GroceryList">
+        <property name="groceries">
+            <list>
+                <bean id="grocery1" class="Grocery">
+                    <constructor-arg value="Banana"></constructor-arg>
+                    <constructor-arg value="10"></constructor-arg>
+                    <constructor-arg value="0.99"></constructor-arg>
+                </bean>
+                <bean id="grocery2" class="Grocery">
+                    <constructor-arg value="Apple"></constructor-arg>
+                    <constructor-arg value="12"></constructor-arg>
+                    <constructor-arg value="0.55"></constructor-arg>
+                </bean>
+                <bean id="grocery3" class="Grocery">
+                    <constructor-arg value="Truffle"></constructor-arg>
+                    <constructor-arg value="100"></constructor-arg>
+                    <constructor-arg value="300"></constructor-arg>
+                </bean>
+            </list>
+        </property>
+    </bean>
+</beans>
